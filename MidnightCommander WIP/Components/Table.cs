@@ -21,9 +21,9 @@ namespace MidnightCommander.Components
 
         public bool ERROR = false;
 
-        private int Offset = 1;
-        private int selected = 2;
-        private int top = 0;
+        public int Offset = 1;
+        public int selected = 2;
+        public int top = 0;
 
         public int WidthStart;
         public int Height = Console.WindowHeight;

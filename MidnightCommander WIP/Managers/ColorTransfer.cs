@@ -8,6 +8,8 @@ namespace MidnightCommander.Managers
 {
     public static class ColorTransfer
     {
-        public static string colorScheme = "Basic";
+        public static int index = 0;
+        public static List<string> schemes = new() { "Basic", "Bee", "EliteCommander", "ElectricBlue" };
+        public static string colorScheme = schemes[index];
     }
 }

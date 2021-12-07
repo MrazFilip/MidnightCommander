@@ -1,4 +1,5 @@
 ﻿using System;
+using MidnightCommander.Editor;
 
 namespace MidnightCommander
 {
@@ -9,7 +10,8 @@ namespace MidnightCommander
             /* TODO:
              *          Nebrat si věci osobně ¯\_(ツ)_/¯
              *          Cute kód
-             *          Editec texťákec
+             *          
+             *          Předělat barvy aby fungovali všude
              */
 
             //Dafualtní nastavení
@@ -21,7 +23,6 @@ namespace MidnightCommander
 
             while(true)
             {
-                Console.CursorVisible = false;
                 main.HandleKey(Console.ReadKey(true));
             }
         }

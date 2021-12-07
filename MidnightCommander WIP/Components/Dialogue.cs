@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MidnightCommander.Managers;
 using MidnightCommander.Components.Subcomponents;
+using MidnightCommander.Editor;
 
 namespace MidnightCommander.Components
 {
@@ -18,7 +19,7 @@ namespace MidnightCommander.Components
         private List<Button> buttons = new List<Button>();
         private List<TextBox> textboxes = new List<TextBox>();
         private List<CheckBox> checkboxes = new List<CheckBox>();
-        private List<string> headers = new List<string>() { " Chyba ", " Kopírovat ", " Mazat ", " Vytvářet ", " Přesunout ", " Přejmenovat ", " Schéma " };
+        private List<string> headers = new List<string>() { " Chyba ", " Kopírovat ", " Mazat ", " Vytvářet ", " Přesunout ", " Přejmenovat ", " Zavřít Soubor ", " Uložit Soubor " };
 
         public string Path = " ";
         public string Dest = "";
@@ -27,24 +28,24 @@ namespace MidnightCommander.Components
         public int LastSelectedIndex = 0;
         public int offset = 2;
 
-        public Application ParentWindow { get; set; }
+        public FileBrowserWindow ParentWindow { get; set; }
+        public FileEditor ParentEditor { get; set; }
 
         public bool IsActive { get; set; }
 
-        public Dialogue(Application parentWindow = null)
+        public Dialogue(FileBrowserWindow parentWindow, FileEditor parentEditor = null)
         {
             ParentWindow = parentWindow;
+            ParentEditor = parentEditor;
         }
 
         public void Draw()
         {
-            if(colorScheme != ColorTransfer.colorScheme)
+            if (colorScheme != ColorTransfer.colorScheme)
             {
                 CS = new ColorManager(ColorTransfer.colorScheme);
                 colorScheme = ColorTransfer.colorScheme;
             }
-
-            CodeHandle();
 
             DrawShadow();
             DrawBG();
@@ -106,13 +107,15 @@ namespace MidnightCommander.Components
                 {
                     if (Code == 1 || Code == 3)
                     {
-                        if(msgs.Count == 0)
+                        if (msgs.Count == 0)
                             msgs.Add("CHYBA: ");
                         string temp = "";
                         if (Code == 3)
                             temp = "  ";
                         Console.Write(" │ " + msgs[0] + Path + temp + " │ ");
                     }
+                    else if (Code == 7 || Code == 8)
+                        Console.Write(" │ " + msgs[0] + Path + msgs[1] + " │ ");
                     else if (Code == 2 || Code == 5)
                         Console.Write(" │ " + Path + " -> " + Dest + " │ ");
                     else
@@ -158,7 +161,7 @@ namespace MidnightCommander.Components
 
             textboxes = new List<TextBox>();
 
-            if (Code != 1 && Code != 3)
+            if (Code != 1 && Code != 3 && Code != 7 && Code != 8)
             {
                 if(Code == 2 || Code == 5)
                 {
@@ -182,101 +185,156 @@ namespace MidnightCommander.Components
             }
         }
 
-        public void CodeHandle()
-        {
-            /* 1 - Error
-             * 2 - Copy
-             * 3 - Delete
-             * 4 - Create
-             * 5 - Move
-             * 6 - Rename
-             */
-
-            if (Code == 1)
-            {
-                // v případě chyby se dá přepsat path na chybovou hlášku = nemusí se vytvářet extra proměnná
-
-                msgs.Add("CHYBA: ");
-
-                if (Path == " ")
-                    Path = ParentWindow.Path;
-                width = msgs[0].Length + Path.Length + 6;
-                height = 6;
-            }
-            else if (Code == 2)
-            {
-                if (ParentWindow.PathDest == null)
-                    Error("SLOŽKA PRO KOPII");
-                else
-                {
-                    Path = ParentWindow.Path;
-                    Dest = ParentWindow.PathDest;
-                    width = Path.Length + Dest.Length + 10;
-                    height = 6;
-                }
-            }
-            else if (Code == 3)
-            {
-                msgs.Add("Chcete odstranit: ");
-                msgs.Add(" ?");
-                Path = ParentWindow.Path;
-                width = msgs[0].Length + msgs[1].Length + Path.Length + 6;
-                height = 6;
-            }
-            else if (Code == 4)
-            {
-                checkboxText = "Je soubor?";
-                Path = ParentWindow.Path;
-                msgs.Add("");
-                width = Console.WindowWidth / 3;
-                height = 7;
-            }
-            else if (Code == 5)
-            {
-                if (ParentWindow.PathDest == null)
-                    Error("SLOŽKA PRO PŘESUN");
-                else
-                {
-                    Path = ParentWindow.Path;
-                    Dest = ParentWindow.PathDest;
-                    width = Path.Length + Dest.Length + 10;
-                    height = 6;
-                }
-            }
-            else if (Code == 6)
-            {
-                checkboxText = "Zachovat typ souboru?";
-                Path = ParentWindow.Path;
-                msgs.Add("");
-                width = Console.WindowWidth / 3;
-                height = 7;
-            }
-        }
+        /* 1 - Error
+         * 2 - Copy
+         * 3 - Delete
+         * 4 - Create
+         * 5 - Move
+         * 6 - Rename
+         * 7 - Editor_Save
+         * 8 - Editor_Exit
+         */
 
         public void Error(string message)
         {
-            Path = message;
             Code = 1;
+
+            msgs.Add("CHYBA: ");
+
+            Path = message;
+
+            if (Path == " ")
+                Path = ParentWindow.Path;
+            width = msgs[0].Length + Path.Length + 6;
+            height = 6;
+
+            Draw();
+        }
+
+        public void Copy()
+        {
+            Code = 2;
+
+            if (ParentWindow.PathDest == null)
+                Error("SLOŽKA PRO KOPII");
+            else
+            {
+                Path = ParentWindow.Path;
+                Dest = ParentWindow.PathDest;
+                width = Path.Length + Dest.Length + 10;
+                height = 6;
+            }
+
+            Draw();
+        }
+
+        public void Move()
+        {
+            Code = 5;
+
+            if (ParentWindow.PathDest == null)
+                Error("SLOŽKA PRO PŘESUN");
+            else
+            {
+                Path = ParentWindow.Path;
+                Dest = ParentWindow.PathDest;
+                width = Path.Length + Dest.Length + 10;
+                height = 6;
+            }
+
+            Draw();
+        }
+
+        public void Create()
+        {
+            Code = 4;
+
+            checkboxText = "Je soubor?";
+            Path = ParentWindow.Path;
+            msgs.Add("");
+            width = Console.WindowWidth / 3;
+            height = 7;
+
+            Draw();
+        }
+
+        public void Rename()
+        {
+            Code = 6;
+
+            checkboxText = "Zachovat typ souboru?";
+            Path = ParentWindow.Path;
+            msgs.Add("");
+            width = Console.WindowWidth / 3;
+            height = 7;
+
+            Draw();
+        }
+
+        public void Delete()
+        {
+            Code = 3;
+
+            msgs.Add("Chcete odstranit: ");
+            msgs.Add(" ?");
+            Path = ParentWindow.Path;
+            width = msgs[0].Length + msgs[1].Length + Path.Length + 6;
+            height = 6;
+
+            Draw();
+        }
+
+        public void Editor_Exit()
+        {
+            Code = 7;
+
+            msgs.Add("Soubor ");
+            msgs.Add(" byl upraven. Přejete si ho uložit před ukončením?");
+            Path = ParentEditor.Path;
+            width = msgs[0].Length + msgs[1].Length + Path.Length + 6;
+            height = 6;
+
+            Draw();
+        }
+
+        public void Editor_Save()
+        {
+            Code = 8;
+
+            msgs.Add("Chcete soubor ");
+            msgs.Add(" uložit?");
+            Path = ParentEditor.Path;
+            width = msgs[0].Length + msgs[1].Length + Path.Length + 6;
+            height = 6;
+
             Draw();
         }
 
         public void CloseDialogue()
         {
-            foreach(Table t in ParentWindow.tables)
+            if(Code != 7 && Code != 8)
             {
-                if (t.ERROR)
+                foreach (Table t in ParentWindow.tables)
                 {
-                    t.ERROR = false;
-                    t.HandleKey(new ConsoleKeyInfo('e', ConsoleKey.Enter, false, false, false));
-                }    
-            }
+                    if (t.ERROR)
+                    {
+                        t.ERROR = false;
+                        t.HandleKey(new ConsoleKeyInfo('e', ConsoleKey.Enter, false, false, false));
+                    }
+                }
 
-            ParentWindow.DialogActive = false;
-            foreach(Table t in ParentWindow.tables)
-            {
-                t.Draw();
+                ParentWindow.DialogActive = false;
+                foreach (Table t in ParentWindow.tables)
+                {
+                    t.Draw();
+                }
+                LastSelectedIndex = 0;
             }
-            LastSelectedIndex = 0;
+            else
+            {
+                ParentEditor.DialogActive = false;
+                ParentEditor.Draw();
+            }
         }
 
         public void FileActions()
@@ -356,9 +414,28 @@ namespace MidnightCommander.Components
                     ExceptionDraw(eh.message);
                 }
             }
+            else if (Code == 7 || Code == 8)
+            {
+                ParentEditor.Save();
+                if (Code == 7)
+                {
+                    ParentEditor.ParentApplication.ActiveWindow = ParentEditor.ParentApplication.SavedBrowser;
+                    ParentEditor.ParentApplication.SavedBrowser.Draw();
+                    ParentEditor.ParentApplication.SavedBrowser.Refresh();
+                    return;
+                }
+                if (Code == 8)
+                {
+                    ParentEditor.Save();
+                    ParentEditor.DialogActive = false;
+                    ParentEditor.Draw();
+                    return;
+                }
+            }
 
             CloseDialogue();
-            ParentWindow.Refresh();
+            if(ParentWindow != null)
+                ParentWindow.Refresh();
         }
 
         public void ExceptionDraw(string message)

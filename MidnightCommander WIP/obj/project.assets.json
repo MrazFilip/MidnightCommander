@@ -8,19 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\filda\\.nuget\\packages\\": {}
+    "C:\\Users\\mrazfilip\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio\\Midnight Commander - projekt\\checkpoint3\\MidnightCommander WIP\\MidnightCommander.csproj",
+      "projectUniqueName": "C:\\Users\\mrazfilip\\Desktop\\MidnightCommander checkpoint3\\MidnightCommander.csproj",
       "projectName": "MidnightCommander",
-      "projectPath": "D:\\Visual Studio\\Midnight Commander - projekt\\checkpoint3\\MidnightCommander WIP\\MidnightCommander.csproj",
-      "packagesPath": "C:\\Users\\filda\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio\\Midnight Commander - projekt\\checkpoint3\\MidnightCommander WIP\\obj\\",
+      "projectPath": "C:\\Users\\mrazfilip\\Desktop\\MidnightCommander checkpoint3\\MidnightCommander.csproj",
+      "packagesPath": "C:\\Users\\mrazfilip\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mrazfilip\\Desktop\\MidnightCommander checkpoint3\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\filda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mrazfilip\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

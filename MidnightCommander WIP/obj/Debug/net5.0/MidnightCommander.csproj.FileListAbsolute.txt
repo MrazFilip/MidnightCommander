@@ -110,3 +110,51 @@ C:\Users\mrazfilip\Desktop\MidnightCommander new CHECKPOINT 2 LAST UŽ MOREEE\ob
 C:\Users\mrazfilip\Desktop\MidnightCommander new CHECKPOINT 2 LAST UŽ MOREEE\obj\Debug\net5.0\ref\MidnightCommander.dll
 C:\Users\mrazfilip\Desktop\MidnightCommander new CHECKPOINT 2 LAST UŽ MOREEE\obj\Debug\net5.0\MidnightCommander.pdb
 C:\Users\mrazfilip\Desktop\MidnightCommander new CHECKPOINT 2 LAST UŽ MOREEE\obj\Debug\net5.0\MidnightCommander.genruntimeconfig.cache
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\bin\Debug\net5.0\MidnightCommander.exe
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\bin\Debug\net5.0\MidnightCommander.deps.json
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\bin\Debug\net5.0\MidnightCommander.runtimeconfig.json
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\bin\Debug\net5.0\MidnightCommander.runtimeconfig.dev.json
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\bin\Debug\net5.0\MidnightCommander.dll
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\bin\Debug\net5.0\ref\MidnightCommander.dll
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\bin\Debug\net5.0\MidnightCommander.pdb
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\MidnightCommander.csproj.AssemblyReference.cache
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\MidnightCommander.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\MidnightCommander.AssemblyInfoInputs.cache
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\MidnightCommander.AssemblyInfo.cs
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\MidnightCommander.csproj.CoreCompileInputs.cache
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\MidnightCommander.dll
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\ref\MidnightCommander.dll
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\MidnightCommander.pdb
+D:\Visual Studio\Midnight Commander - projekt\checkpoint3\MidnightCommander WIP\obj\Debug\net5.0\MidnightCommander.genruntimeconfig.cache
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.exe
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.deps.json
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.runtimeconfig.json
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.runtimeconfig.dev.json
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.dll
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\bin\Debug\net5.0\ref\MidnightCommander.dll
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.pdb
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.csproj.AssemblyReference.cache
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.GeneratedMSBuildEditorConfig.editorconfig
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.AssemblyInfoInputs.cache
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.AssemblyInfo.cs
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.csproj.CoreCompileInputs.cache
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.dll
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\ref\MidnightCommander.dll
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.pdb
+X:\ZPR PGR - lidOOP\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.genruntimeconfig.cache
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.exe
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.deps.json
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.runtimeconfig.json
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.runtimeconfig.dev.json
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.dll
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\bin\Debug\net5.0\ref\MidnightCommander.dll
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\bin\Debug\net5.0\MidnightCommander.pdb
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.csproj.AssemblyReference.cache
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.AssemblyInfoInputs.cache
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.AssemblyInfo.cs
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.csproj.CoreCompileInputs.cache
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.dll
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\ref\MidnightCommander.dll
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.pdb
+C:\Users\mrazfilip\Desktop\MidnightCommander checkpoint3\obj\Debug\net5.0\MidnightCommander.genruntimeconfig.cache
